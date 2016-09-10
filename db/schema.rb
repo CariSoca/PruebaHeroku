@@ -10,9 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827195346) do
+ActiveRecord::Schema.define(version: 20160910192542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "estimation_sessions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "sharedLink"
+    t.boolean  "synchronous"
+    t.datetime "beginningTime"
+    t.datetime "endTime"
+    t.datetime "realTime"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "strategyId"
+  end
+
+  create_table "partial_estimations", force: :cascade do |t|
+    t.float    "estimation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.float    "finalEstimation"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "nickname"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
