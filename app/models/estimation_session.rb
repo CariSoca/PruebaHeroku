@@ -1,4 +1,4 @@
 class EstimationSession < ApplicationRecord
-  has_one :proyect
+  has_one :project
   has_many :stories
 end
