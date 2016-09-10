@@ -1,0 +1,2 @@
+class EstimationSessionsController < ApplicationController
+end

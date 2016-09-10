@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  sharedLink: MyString
+  synchronous: false
+  beginningTime: 2016-09-09 18:32:59
+  endTime: 2016-09-09 18:32:59
+  realTime: 2016-09-09 18:32:59
+
+two:
+  title: MyString
+  description: MyText
+  sharedLink: MyString
+  synchronous: false
+  beginningTime: 2016-09-09 18:32:59
+  endTime: 2016-09-09 18:32:59
+  realTime: 2016-09-09 18:32:59
