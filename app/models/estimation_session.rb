@@ -8,12 +8,12 @@ class EstimationSession < ApplicationRecord
   
   private
 
-  def generate_link
-  	self.sharedLink = loop do
-  		random_token = SecureRandom.hex(32)
+    def generate_link
+  	  self.sharedLink = loop do
+  	    random_token = SecureRandom.hex(32)
   		break random_token unless EstimationSession.exists?(sharedLink: random_token)
-  	end
-  end
+  	  end
+    end
 
 
 end
