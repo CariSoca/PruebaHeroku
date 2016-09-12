@@ -5,12 +5,12 @@ class ConsensusStrategy
   # Must think some sort of code system
   #   to identify for each possible conflict, 
   #   the appropriate resolution strategy
-  def applyConsensus (estimations)
+  def apply_consensus (estimations)
   end	
 
-  private
-  	# controls the argument received is hash type
-    def parameterControl (param)
-  	  param.is_a?(Hash) ? return true : return false
+  private  	
+    def parameter_control (param)
+  	  param.is_a?(Hash) && !param.empty?
     end	
+    
 end
