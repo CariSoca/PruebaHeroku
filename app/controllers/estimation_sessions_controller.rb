@@ -12,7 +12,7 @@ class EstimationSessionsController < ApplicationController
 		@estimated_stories = estimation_session.stories
 
 		# TODO define view for rendering
-		render ''
+		render 
 		end	
 	end	
 end
