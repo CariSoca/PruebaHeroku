@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="Delfos">
-<head>
-  <base href="/" />
-  <title>AngularRailsExample</title>
-  <%= stylesheet_link_tag    'Delfos', media: 'all' %>
-  <%= javascript_include_tag 'Delfos' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="container" ng-view></div>
-  <%= yield %>
-</body>
+<html>
+  <head>
+    <title>Delfos</title>
+    
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
 </html>

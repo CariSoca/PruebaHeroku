@@ -63,7 +63,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.10.0)
+    coffee-script-source (1.8.0)
     concurrent-ruby (1.0.2)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
@@ -76,6 +76,7 @@ GEM
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
     ffi (1.9.14)
+    ffi (1.9.14-x86-mingw32)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -202,6 +203,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.2)
+  coffee-script-source (= 1.8.0)
   database_cleaner
   factory_girl_rails (~> 4.0)
   haml
