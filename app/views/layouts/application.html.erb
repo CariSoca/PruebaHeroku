@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Delfos</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<html ng-app="Delfos">
+<head>
+  <base href="/" />
+  <title>AngularRailsExample</title>
+  <%= stylesheet_link_tag    'Delfos', media: 'all' %>
+  <%= javascript_include_tag 'Delfos' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container" ng-view></div>
+  <%= yield %>
+</body>
 </html>
