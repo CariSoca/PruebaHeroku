@@ -1,4 +1,4 @@
 class PartialEstimation < ApplicationRecord
-  has_one :user
+  belongs_to :user
   has_one :story
 end
