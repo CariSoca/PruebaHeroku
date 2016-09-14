@@ -1,0 +1,21 @@
+<div ui-content-for="title">
+    <span></span>
+</div>
+
+<div class="scrollable" >
+    <div class="scrollable-content">
+        <div  style=" height:  100%" class="container wb container-fluid section section-break" id="estimateExample">
+
+            <h5 style=" "  class=" DhistoriaPrincipal media-heading">{{nombreHistSel}}</h5>
+            <div ng-switch="puntajeHistSel" style=" width: 100%;  padding-bottom: 5%;" >
+                <span ng-switch-default style="top:0px" class="DyourVote label">Your vote: {{puntajeHistSel}}</span>
+                <span ng-switch-when="0" ></span>
+            </div>  
+
+            <div  class="btn-group"  ng-repeat="idx in seriePuntuacion" ng-click="siguienteHistoria(idx, historiaSeleccionada)" >
+                <a class="DbotonRojo btn "  ui-exclusion-group='myButtons'>{{idx}}</a>
+            </div>
+
+        </div>
+    </div>
+</div>

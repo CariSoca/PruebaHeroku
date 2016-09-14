@@ -1,0 +1,30 @@
+<div class="scrollable">
+    <h1 class="DletraGrande Dcabezal DfondoNegro scrollable-header app-name"> <small> Project_name</small></h1>  
+    <div class="scrollable-content"  >   <input id="IDStory" class="DaddStory"  placeholder="+ Add story"   ng-model="addStoryLabel" ng-keypress="$event.keyCode == 13? addStory():null"  />
+                        
+
+
+        <div class="list-group" >    
+
+
+            <a class="list-group-item media" ui-turn-off='uiSidebarLeft'  ng-repeat="story in stories" ng-click="cambiarHistoria(story.id)">            
+
+                <div class="media-body"   >
+                    <h5 class="media-heading"  >{{story.name}}</h5>
+                    <small ng-switch >
+                        <span >
+                            <span class="DyourVote label">Your vote: {{story.puntaje}}</span>
+                        </span>                      
+                    </small>
+                    <small ng-switch >
+                        <span >
+                            <span class="label label-success">Total: {{story.total}}</span>
+                        </span>                      
+                    </small>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</div>
