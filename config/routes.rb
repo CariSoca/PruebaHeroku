@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :estimation_sessions, :partial_estimations, :projects,
   					:stories, :users
 
-  root 'projects#index'
+	post '/EstimationSessions/:id', to: 'EstimationSessions#single_person_estimation'
+	
+	root 'projects#index'
 
 end
