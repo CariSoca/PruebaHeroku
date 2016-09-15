@@ -60,9 +60,50 @@
 
 
 .firstLabel {
+<<<<<<< HEAD
     margin-right: 80px;
 }
 
 .number_of_values{
     margin-right: 40px;
 }
+=======
+    margin-right: 100px;
+}
+
+.config_elements{
+    padding-bottom:15px;
+}
+
+.number_of_values{
+    margin-left : 40px;
+}
+
+.timeboxlabel{
+    margin-left : 40px;
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/fonts/glyphicons-halflings-regular.eot');
+  src: url('/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/glyphicons-halflings-regular.woff') format('woff'),
+  url('/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+.form{
+    text-align: center ;
+    padding-top:20px;
+    padding-bottom:30px; 
+    width:100%;
+}
+
+.w3-input{
+     width: 65%; 
+     height:40px; 
+     border: white; 
+     box-shadow: 6px 6px 3px gray;
+    background-color: light gray;
+}
+          
+>>>>>>> develop

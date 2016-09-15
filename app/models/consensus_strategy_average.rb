@@ -1,11 +1,12 @@
 class ConsensusStrategyAverage < ConsensusStrategy
-	# must control that estimations is a hash
-  def applyConsensus (estimations) 
-  	return 0 if !parameterControl(estimations) # 'estimations' is not a hash
+
+  def apply_consensus (estimations) 
+  	return -1 if !parameter_control(estimations)
   	sum = 0
     estimations.each do |key, value|
       sum += value	
     end	
-    return sum / estimations.lenght # returns average
-  end	
+    sum.to_f / estimations.length.to_f
+  end
+  	
 end	
