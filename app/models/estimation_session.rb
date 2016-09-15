@@ -1,7 +1,7 @@
 require 'yaml'
 
 class EstimationSession < ApplicationRecord
-  has_one :project
+  belongs_to :project, dependant: :destroy
   has_many :stories
 
   attr_accessor :consensus_strategy 
@@ -26,7 +26,7 @@ class EstimationSession < ApplicationRecord
   private
   	def set_consensus_strategy
   		strategies_ids = YAML.load_file("#{Rails.root.to_s}/config/custom/strategies_ids.yml")
-  		@consensus_strategy = Object::const_get(strategies_ids[self.strategyId]).new
+  		@consensus_strategy = Object::const_get(strategies_ids[ self[:strategyId] ]).new
   	end	
   	
 end
