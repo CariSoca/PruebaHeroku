@@ -1,4 +1,5 @@
 class ShareController < ApplicationController
-	def new
+	def index
+		render 'home/share'
 	end	
 end
