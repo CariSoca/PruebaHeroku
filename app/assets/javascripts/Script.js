@@ -1,8 +1,8 @@
 /// <reference path="angular.js" />
 
-var app = angular
-			.module("mainScreenModulo", [])
-			.controller("mainScreenControlador", function($scope) {
+var app = angular.module("mainScreenModulo", []);
+			app.controller("mainScreenControlador", function($scope, $http) {
+
 				$scope.proyecto = {
 					name: "Proyecto",
 					estrategia: "PlanningPoker",
@@ -33,5 +33,9 @@ var app = angular
 					$scope.HistoriaBorrar = null;
 				};
 
+                $http.get("home.json")
+  				.then(function(response) {
+      			  $scope.projectData = response.data;
+  				});
 
 			});
