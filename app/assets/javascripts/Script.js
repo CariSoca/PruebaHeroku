@@ -28,8 +28,8 @@ var app = angular
 					$scope.nuevaHistoria = null;
 				};
 
-				$scope.eliminarHistoria = function () {
-					$scope.historias.splice($scope.HistoriaBorrar,1);
+				$scope.eliminarHistoria = function (historia) {
+					$scope.historias.splice($scope.historias.indexOf(historia),1);
 					$scope.HistoriaBorrar = null;
 				};
 
