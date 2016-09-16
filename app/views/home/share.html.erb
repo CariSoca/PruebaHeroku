@@ -21,7 +21,7 @@
 
 
 </head>
-<body>
+<body ng-app="share" ng-controller="shareCtrl">
 
             
     <!-- Modal -->
@@ -48,7 +48,6 @@
                 <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
             </form>
           </div>
-
         </div>
         
       </div>
@@ -63,11 +62,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" style = "color:white">Delfos</i></a>
+          <%= link_to controller: 'home' do %>
+            <p class="navbar-brand" style = "color:white; height:100%">Delfos</p>
+          <% end %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#login_modal" data-toggle="modal">Login</a> </li>
+            <li><a style = "color : white" href="#login_modal" data-toggle="modal">Login</a> </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -75,7 +76,7 @@
 
 
 	<!-- FEATURE SECTION -->
-<div class="container wb" style=" width:100%;">
+<div class="container wb" style=" width:100%; margin-top : 70px">
 	<div class="container wb" style=" width:60%;">
     
     
@@ -156,9 +157,13 @@
 
     		</div>
     
-    <!-- start botton-->
     <div class="container" style="text-align:center; width:100% ;padding-bottom:30px">
-			<button class="button" style="position:relative;border-radius:30px; margin-top:100px; padding: 20px 60px; background-color: #80ff80">START</button>
+
+      <%= link_to controller: 'home' do %>
+      <button class="btn btn-info btn-lg" style="position:relative; float : left; margin-top:100px; padding: 20px 60px">Back</button>
+      <% end %>
+    <!-- start botton-->
+			<button class="btn btn-success btn-lg" style="position:relative; float : right; margin-top:100px; padding: 20px 60px">START</button>
 		</div>
 	</div>
 </div><!-- container -->
