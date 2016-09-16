@@ -16,3 +16,4 @@ class EstimationSessionsController < ApplicationController
 		end	
 	end	
 end
+

@@ -1,0 +1,2 @@
+class EstimationStructure < ApplicationRecord
+end
