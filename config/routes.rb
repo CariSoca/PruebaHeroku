@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :estimation_sessions, :partial_estimations, :projects,
   					:stories, :users, :share
 
+	post '/EstimationSessions/:id', to: 'estimation_sessions#single_person_estimation'
+
 
 end

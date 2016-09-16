@@ -1,4 +1,4 @@
 class PartialEstimation < ApplicationRecord
-  has_one :user
+  belongs_to :user, dependant: :destroy
   has_one :story
 end
