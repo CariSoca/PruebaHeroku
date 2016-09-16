@@ -21,11 +21,16 @@ var app = angular
 
 				$scope.sync = true;
 
-				$scope.historias = ["login google","pull trello","pull jira"];
+				$scope.historias = ["login google"];
 
 				$scope.agregarHistoria = function () {
 					$scope.historias.push($scope.nuevaHistoria);
 					$scope.nuevaHistoria = null;
+				};
+
+				$scope.eliminarHistoria = function () {
+					$scope.historias.splice($scope.HistoriaBorrar,1);
+					$scope.HistoriaBorrar = null;
 				};
 
 

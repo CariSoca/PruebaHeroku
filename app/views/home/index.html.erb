@@ -140,9 +140,12 @@
     <div class= "table-responsive" style = "text-align: center ;padding-bottom:30px;">
       
 
-      <table class= "table table-hover" style="width: 100%; margin-right:auto; margin-left:auto; border-color: #262626; border-style:solid   ">
-        <tr ng-repeat="historia in historias track by $index">
-          <td style="pading: 25px" contenteditable="true">{{ historia }}</td>
+
+			<table class= "table table-hover" style="width: 100%; margin-right:auto; margin-left:auto; border-color: #262626; border-style:solid   ">
+			  <tr ng-repeat="historia in historias track by $index">
+
+          <td style="pading: 25px" contenteditable="true" name="HistoriaBorrar" ng-model = "HistoriaBorrar">{{ historia }}</td><td>
+          <span class=" glyphicon glyphicon-remove" ng-click="eliminarHistoria(HistoriaBorrar)" style="float:right"></span> </td> 
         </tr>
 			 
 
