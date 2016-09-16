@@ -120,11 +120,7 @@
       </div>
 
     </h1>
-		<div class="form" >
 
-				<input class="w3-input w3-border w3-round" type="text"  placeholder="Write your story here...">
-				<button class="button add-button" style=" font-weight: bold;text-align:right;padding: 12px 15px; background-color: grey">Add</button>
-				<button class="button" style=" text-align:right;padding: 12px 30px;font-weight: bold; background-color: #80ff80">Import Story</button>
 		<div class="form">
 
 				<input class="w3-input w3-border w3-round" type="text"  placeholder="Write your story here..." name ="nuevaHistoria" ng-model ="nuevaHistoria">
@@ -148,18 +144,7 @@
         <tr ng-repeat="historia in historias track by $index">
           <td style="pading: 25px" contenteditable="true">{{ historia }}</td>
         </tr>
-			  <tr >
-				
-				<td style="pading: 25px" contenteditable="true">Login with Facebook</td>
-			  </tr>
-			  <tr >
-				
-				<td style="pading: 25px" contenteditable="true">Pull Trello</td>
-			  </tr>
-			  <tr >
-				
-				<td style="pading: 25px"contenteditable="true">Pull Jira</td>
-			  </tr>
+			 
 
 			</table>
 		</div>
