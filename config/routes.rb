@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
 	post '/EstimationSessions/:id', to: 'estimation_sessions#single_person_estimation'
 
+	post '/EstimationSessions/:id', to: 'estimation_sessions#single_person_estimation'
+
 
 end
