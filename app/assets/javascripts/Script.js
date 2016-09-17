@@ -29,7 +29,8 @@ var app = angular
 				};
 
 				$scope.eliminarHistoria = function () {
-					$scope.historias.splice($scope.historia,1);
+
+					$scope.historias.splice($scope.HistoriaBorrar,1);
 					$scope.HistoriaBorrar = null;
 				};
 
