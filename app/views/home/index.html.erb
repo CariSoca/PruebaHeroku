@@ -86,7 +86,7 @@
             </div>
             <div style="display:block;" class= "config_elements">
               <select style="width: 100%">
-                <option value="strategy">Average</option>
+                <option value="strategy" ng-repeat = "consensus in consensusList">{{consensus}}</option>
               </select>
             </div>
             <div >
@@ -95,8 +95,7 @@
             </div>
             <div style="display:block;" class= "config_elements">
               <select style="width: 40%">
-                <option value="Series">Fibonacci</option>
-                <option value="Series">Numerical Series</option>
+                <option value="Series" ng-repeat = "serie in seriesList">{{serie}}</option>
               </select>
               <select style="width: 15%" class= "number_of_values">
                 <option value="number_of_values">1</option>

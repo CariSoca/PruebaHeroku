@@ -13,12 +13,6 @@ var app = angular.module("mainScreenModulo", []);
 				$scope.estrategias = [{id: 1, name:"PlanningPoker"}];
 				$scope.idEstrategiaSeleccionada = 1;
 
-				$scope.series = [{id: 1, name:"Fibonacci"}];
-				$scope.idSerieSeleccionada = 1;
-
-				$scope.consensos =[{id: 1, name: "Average"}];
-				$scope.idConsensoSeleccionado = 1;
-
 				$scope.sync = true;
 
 				$scope.historias = ["login google"];
@@ -35,7 +29,9 @@ var app = angular.module("mainScreenModulo", []);
 
                 $http.get("home.json")
   				.then(function(response) {
-      			  $scope.projectData = response.data;
+      			  $scope.consensusList = response.data.consensus_list;
+      			  $scope.seriesList = response.data.series_list;
+
   				});
 
 			});

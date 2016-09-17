@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: {default:{consensus: "Average"
+      format.json { render json: {default:{consensus: "Average",
 					   series:"Fibonacci",
 					   number_of_vals: 7,
 					   timebox: [1,0]},
