@@ -25,11 +25,12 @@ var app = angular.module("mainScreenModule", []);
   				  	$scope.consensusList = response.data.consensus_list;
       			    $scope.seriesList = response.data.series_list;  
       			    $scope.timebox = response.data.default.timebox;	
-      			    $scope.time = $scope.timebox[0] + ":" + $scope.timebox[1];
+      			    $scope.hour = $scope.timebox[0];
+      			    $scope.min = $scope.timebox[1];
       			    $scope.number_of_vals = response.data.default.number_of_vals;
                     $scope.values = Array.apply(null, {length: $scope.number_of_vals + 1}).map(Number.call, Number)
                     $scope.values.shift();			  	
-                    $scope.selectedQuantityValues = 1; 
+                    $scope.selectedQuantityValues = $scope.number_of_vals; 
   				}); 
 
 				$scope.sendData = function(){
@@ -37,7 +38,9 @@ var app = angular.module("mainScreenModule", []);
 										consensusStrategy : $scope.selectedStrategyId,
 										values : $scope.selectedQuantityValues,
 										serie : $scope.defaultSerie,
-										stories : $scope.stories														
+										stories : $scope.stories,
+										//email:  Ver con los de login
+										//nickname:														
 		          		};
 						$http.post("projects/", angular.toJson(project));					
 					};					

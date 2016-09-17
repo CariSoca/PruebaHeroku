@@ -101,7 +101,11 @@
             </form>
             <span class="timeboxLabel">Timebox</span>
             <div style="display:block;" class= "config_elements">
-              <input ng-model="time" placeholder="HH:mm" />
+              
+              <input style="width: 17%" type="number" ng-model="hour" placeholder="hh" min="0" max="10">
+
+              <input style="width: 17%" type="number" ng-model="min" placeholder="mm" min="0" max="59">
+              <t style= "color:#808080">Hour/Min</t>
             </div>
 
         </div>
