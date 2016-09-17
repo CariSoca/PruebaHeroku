@@ -18,8 +18,9 @@ class ProjectsController < ApplicationController
  
 	  #user.estimation_sessions << estimation_session
 	  session_membership = SessionMembership.new()
-          session_membership.user = user
-	  session_membership.estimation_session = estimation_session
+          session_membership = user
+          session_membership.save()
+	  session_membership = estimation_session
           session_membership.save()	  
 
 	  params[:stories].each do |story|
