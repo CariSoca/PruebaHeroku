@@ -76,7 +76,6 @@
     
     <!-- section to add stories-->
     <h1 style = "text-align: left" ><input style = "color:#262626" ng-model="projectName">
-      
       <div class="dropdown">
         <span class=" glyphicon glyphicon-cog"></span>
         <div class="dropdown-content">
@@ -84,29 +83,25 @@
               <span class="serieslabel">Consensus strategy</span>
             </div>
             <div style="display:block;" class= "config_elements">
-              <select style="width: 100%">
-                <option value="strategy" ng-repeat = "consensus in consensusList">{{consensus}}</option>
-              </select>
+              <select style="width: 100%" ng-model="selectedStrategyId" ng-options="consensus for consensus in consensusList">
+                </select>
             </div>
             <div >
               <span class="firstLabel">Series</span>
               <span class="secondLabel"> Number of values</span>
             </div>
             <div style="display:block;" class= "config_elements">
-              <select style="width: 40%">
-                <option value="Series" ng-repeat = "serie in seriesList">{{serie}}</option>
-              </select>
-              <select style="width: 15%" class= "number_of_values">
-                <option value="number_of_values" ng-repeat="value in [1,2,3,4,5,6,7]">{{value}}</option>
-                
-              </select>
+              <select style="width: 40%" ng-model="defaultSerie" ng-options="serie for serie in seriesList ">
+                </select>
+              <select style="width: 15%" class= "number_of_values" ng-model="selectedQuantityValues" ng-options="value for value in values ">
+                </select>
             </div>
             <form action="" class= "config_elements">
               <input type="checkbox" name="sync_check_box" id="sync_check_box" value="sync" checked="true" disabled="true" >Sync<br>
             </form>
             <span class="timeboxLabel">Timebox</span>
             <div style="display:block;" class= "config_elements">
-              <input type="time" name="moduleStart" class="dateFormat"/>
+              <input ng-model="time" placeholder="HH:mm" />
             </div>
 
         </div>
