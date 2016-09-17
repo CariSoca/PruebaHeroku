@@ -1,8 +1,10 @@
 require 'json'
 class ProjectsController < ApplicationController
 
-	def new		
-		@resp = params[:name]
+	def create		
+		@resp = params
+		puts "balbalblabsdfsdfsdfsdfsdfsfd"
+		puts @resp[:name]
 		render json: @resp		
 	end	  
 

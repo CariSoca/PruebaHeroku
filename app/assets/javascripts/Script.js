@@ -26,11 +26,11 @@ var app = angular.module("mainScreenModule", []);
 
 				$scope.sendData = function(){
 						var project = { name: $scope.projectName,
-														consensusStrategy: $scope.selectedStrategyId,
-														values: $scope.selectedQuantityValues,
-														serie: $scope.selectedSerieId,
-														stories: $scope.stories														
-						};
-						$http.get("projects/new." + angular.toJson(project));					
+										consensusStrategy : $scope.selectedStrategyId,
+										values : $scope.selectedQuantityValues,
+										serie : $scope.selectedSerieId,
+										stories : $scope.stories														
+		};
+						$http.post("projects/", angular.toJson(project));					
 					};					
 				});		

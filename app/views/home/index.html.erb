@@ -75,7 +75,7 @@
     
     
     <!-- section to add stories-->
-    <h1 style = "text-align: left" ><a style = "color:#262626" contenteditable="true" ng-model="projectName">{{projectName}} </a>
+    <h1 style = "text-align: left" ><input style = "color:#262626" ng-model="projectName">
       
       <div class="dropdown">
         <span class=" glyphicon glyphicon-cog"></span>
@@ -147,9 +147,9 @@
     
     <!-- start botton-->
     <div class="container" style="text-align:center; width:100% ;padding-bottom:30px">
-			
+        <%= link_to controller: 'share' do %>
         <button type="button" class="btn btn-success btn-lg" ng-click="sendData()">NEXT</button>
-      
+        <% end %>
 		</div>
 	</div>
 </div><!-- container -->

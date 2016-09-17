@@ -1,15 +1,12 @@
-var contributors = angular.module('share', ['ngResource']);
+var app = angular.module('share',[]);
 
-contributors.factory("Contributors", function($resource) {
- return $resource("share/:id", { id: '@id' }, {
-   index:   { method: 'GET', isArray: true, responseType: 'json' }
- });
+
+app.controller("shareCtrl", function($scope, $http) {  
+
+  $http.get("share.json")
+  .then(function(response) {      			  
+    $scope.link = response.data.link;  				  
+    $scope.contributors = response.data.contributors;  				  
+  }); 
+
 });
-
-projects.controller("shareCtrl", function($scope, Contributors) {
- 
- $scope.contributors = Contributors.index()  
- 
- $scope.link = "https://toggl.com/app/timer"
-
-})
