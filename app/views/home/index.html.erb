@@ -76,7 +76,7 @@
     
     
     <!-- section to add stories-->
-    <h1 style = "text-align: left" ><a style = "color:#262626" contenteditable="true">{{projectData.name}} </a>
+    <h1 style = "text-align: left" ><a style = "color:#262626" contenteditable="true" ng-model="projectName">{{projectName}} </a>
       
       <div class="dropdown">
         <span class=" glyphicon glyphicon-cog"></span>
@@ -85,8 +85,8 @@
               <span class="serieslabel">Consensus strategy</span>
             </div>
             <div style="display:block;" class= "config_elements">
-              <select style="width: 100%">
-                <option value="strategy">Average</option>
+              <select style="width: 100%" ng-model="selectedStrategyId" ng-init="strategies[0]">
+                <option value="strategy" ng-repeat="strategy in strategies">{{strategy}}</option>
               </select>
             </div>
             <div >
@@ -94,18 +94,12 @@
               <span class="secondLabel"> Number of values</span>
             </div>
             <div style="display:block;" class= "config_elements">
-              <select style="width: 40%">
-                <option value="Series">Fibonacci</option>
-                <option value="Series">Numerical Series</option>
+              <select style="width: 40%" ng-model="selectedSerieId">
+                <option value="Series" ng-repeat="serie in series">{{serie}}</option>                
               </select>
               <select style="width: 15%" class= "number_of_values">
-                <option value="number_of_values">1</option>
-                <option value="number_of_values">2</option>
-                <option value="number_of_values">3</option>
-                <option value="number_of_values">4</option>
-                <option value="number_of_values">5</option>
-                <option value="number_of_values">6</option>
-                <option value="number_of_values">7</option>
+                <option value="number_of_values" ng-repeat="value in [1,2,3,4,5,6,7]">{{value}}</option>
+                
               </select>
             </div>
             <form action="" class= "config_elements">
@@ -123,9 +117,9 @@
 
 		<div class="form">
 
-				<input class="w3-input w3-border w3-round" type="text"  placeholder="Write your story here..." name ="nuevaHistoria" ng-model ="nuevaHistoria">
+				<input class="w3-input w3-border w3-round" type="text"  placeholder="Write your story here..." name ="newStory" ng-model ="newStory">
 				<input type = "button" value ="Add" class="button add-button" style=" font-weight: bold;text-align:right;padding: 12px 15px; background-color: grey"
-        ng-click="agregarHistoria(nuevaHistoria)">
+        ng-click="addStory(newStory)">
         
 				<button class="button" style=" text-align:right;padding: 12px 30px;font-weight: bold; background-color: #80ff80">
           Import Story
@@ -142,10 +136,10 @@
 
 
 			<table class= "table table-hover" style="width: 100%; margin-right:auto; margin-left:auto; border-color: #262626; border-style:solid   ">
-			  <tr ng-repeat="historia in historias track by $index">
+			  <tr ng-repeat="story in stories track by $index">
 
-          <td style="pading: 25px" contenteditable="false" name="HistoriaBorrar" ng-model = "HistoriaBorrar">{{ historia }}</td><td>
-          <span class=" glyphicon glyphicon-remove" ng-click="eliminarHistoria(HistoriaBorrar)" style="float:right"></span> </td> 
+          <td style="pading: 25px" contenteditable="false" name="toDeleteStory" ng-model = "toDeleteStory">{{ story }}</td><td>
+          <span class=" glyphicon glyphicon-remove" ng-click="deleteStory(toDeleteStory)" style="float:right"></span> </td> 
         </tr>
 			 
 
@@ -155,7 +149,7 @@
     <!-- start botton-->
     <div class="container" style="text-align:center; width:100% ;padding-bottom:30px">
 			<%= link_to controller: 'share' do %>
-        <button type="button" class="btn btn-success btn-lg" >NEXT</button>
+        <button type="button" class="btn btn-success btn-lg" ng-click="sendData()" >NEXT</button>
       <% end %>
 		</div>
 
