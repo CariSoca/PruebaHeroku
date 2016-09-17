@@ -1,5 +1,6 @@
 /// <reference path="angular.js" />
 
+
 var app = angular.module("mainScreenModule", []);
 			app.controller("mainScreenCtrl", function($scope, $http) {
 
@@ -18,10 +19,11 @@ var app = angular.module("mainScreenModule", []);
 				};
 
         $http.get("home.json").then(function(response) {      			  
-      			  $scope.projectName = response.data.name;  				  
+      			    $scope.projectName = response.data.name;  				  
   				  	$scope.series = response.data.series;  				  
   				  	$scope.strategies = response.data.consensusStrategies;
-  				  	//TODO add default settings  				  	
+  				  	$scope.consensusList = response.data.consensus_list;
+      			    $scope.seriesList = response.data.series_list;  				  	
   				}); 
 
 				$scope.sendData = function(){
@@ -30,7 +32,7 @@ var app = angular.module("mainScreenModule", []);
 										values : $scope.selectedQuantityValues,
 										serie : $scope.selectedSerieId,
 										stories : $scope.stories														
-		};
+		          		};
 						$http.post("projects/", angular.toJson(project));					
 					};					
-				});		
+});		

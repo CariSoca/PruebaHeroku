@@ -84,8 +84,8 @@
               <span class="serieslabel">Consensus strategy</span>
             </div>
             <div style="display:block;" class= "config_elements">
-              <select style="width: 100%" ng-model="selectedStrategyId">
-                <option value="strategy" ng-repeat="strategy in strategies">{{strategy}}</option>
+              <select style="width: 100%">
+                <option value="strategy" ng-repeat = "consensus in consensusList">{{consensus}}</option>
               </select>
             </div>
             <div >
@@ -93,8 +93,8 @@
               <span class="secondLabel"> Number of values</span>
             </div>
             <div style="display:block;" class= "config_elements">
-              <select style="width: 40%" ng-model="selectedSerieId">
-                <option value="Series" ng-repeat="serie in series">{{serie}}</option>                
+              <select style="width: 40%">
+                <option value="Series" ng-repeat = "serie in seriesList">{{serie}}</option>
               </select>
               <select style="width: 15%" class= "number_of_values">
                 <option value="number_of_values" ng-repeat="value in [1,2,3,4,5,6,7]">{{value}}</option>
