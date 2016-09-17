@@ -1,11 +1,9 @@
+require 'json'
 class ProjectsController < ApplicationController
-  
-  def index
-    respond_to do |format|
-      format.json { render json: Project.all }
-      format.html
-    end
-  end	
 
-  
+	def new		
+		@resp = params[:name]
+		render json: @resp		
+	end	  
+
 end

@@ -1,4 +1,3 @@
-
   <style>
   .modal-header, h4, .close {
       background-color: #5cb85c;
@@ -44,8 +43,8 @@
 
 
 
-    <div ng-app ="mainScreenModulo">
-    <div ng-controller="mainScreenControlador">
+    <div ng-app ="mainScreenModule">
+    <div ng-controller="mainScreenCtrl">
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" style = "background-color: #262626">
       <div class="container">
@@ -85,7 +84,7 @@
               <span class="serieslabel">Consensus strategy</span>
             </div>
             <div style="display:block;" class= "config_elements">
-              <select style="width: 100%" ng-model="selectedStrategyId" ng-init="strategies[0]">
+              <select style="width: 100%" ng-model="selectedStrategyId">
                 <option value="strategy" ng-repeat="strategy in strategies">{{strategy}}</option>
               </select>
             </div>
@@ -148,14 +147,10 @@
     
     <!-- start botton-->
     <div class="container" style="text-align:center; width:100% ;padding-bottom:30px">
-			<%= link_to controller: 'share' do %>
-        <button type="button" class="btn btn-success btn-lg" ng-click="sendData()" >NEXT</button>
-      <% end %>
+			
+        <button type="button" class="btn btn-success btn-lg" ng-click="sendData()">NEXT</button>
+      
 		</div>
-
-
-
-
 	</div>
 </div><!-- container -->
 

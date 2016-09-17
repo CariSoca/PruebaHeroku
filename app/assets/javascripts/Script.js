@@ -1,7 +1,7 @@
 /// <reference path="angular.js" />
 
-var app = angular.module("mainScreenModulo", []);
-			app.controller("mainScreenControlador", function($scope, $http) {
+var app = angular.module("mainScreenModule", []);
+			app.controller("mainScreenCtrl", function($scope, $http) {
 
 				$scope.sync = true;
 
@@ -17,18 +17,20 @@ var app = angular.module("mainScreenModulo", []);
 					$scope.toDeleteStory = null;
 				};
 
-                $http.get("home.json")
-  				.then(function(response) {      			  
+        $http.get("home.json").then(function(response) {      			  
       			  $scope.projectName = response.data.name;  				  
-  				  $scope.series = response.data.series;  				  
-  				  $scope.strategies = response.data.consensusStrategies;
+  				  	$scope.series = response.data.series;  				  
+  				  	$scope.strategies = response.data.consensusStrategies;
+  				  	//TODO add default settings  				  	
   				}); 
 
-  				/*sendData = function(){
-  					var info = { name: $scope.projectName,
-  							     consensus: $scope.
-
-  					};
-  				};*/ 
-
-			});
+				$scope.sendData = function(){
+						var project = { name: $scope.projectName,
+														consensusStrategy: $scope.selectedStrategyId,
+														values: $scope.selectedQuantityValues,
+														serie: $scope.selectedSerieId,
+														stories: $scope.stories														
+						};
+						$http.get("projects/new." + angular.toJson(project));					
+					};					
+				});		
