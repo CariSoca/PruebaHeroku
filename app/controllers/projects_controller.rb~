@@ -1,3 +1,4 @@
+require 'json'
 class ProjectsController < ApplicationController
 
 	
@@ -17,23 +18,20 @@ class ProjectsController < ApplicationController
  
 	  #user.estimation_sessions << estimation_session
 	  session_membership = SessionMembership.new()
-          session_membership.user = user
-	  session_membership.estimation_session = estimation_session
+          session_membership = user
+          session_membership.save()
+	  session_membership = estimation_session
           session_membership.save()	  
 
 	  params[:stories].each do |story|
 	 
 	   estimation_session.stories.create(name: story)
 	  end
+	 		
+	  
+	  
+	  	  
+
 	end	  
 
-    def share
-      respond_to do |format|
-      format.html { render 'home/share'}
-      format.json { render json: {link: "https://toggl.com/app/timer",
-      							  contributors: ["Daniel Porzio", "Invitado", "Invitado", "Nicolás Urruty"]
-								 }
-				  }
-      end
-    end 
 end
