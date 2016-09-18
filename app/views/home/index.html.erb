@@ -61,7 +61,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
               <div class="dropdown" style="float:right;">
-                <button class="dropbtn"><p style="color:white ; padding-top:15px "><span class=" glyphicon glyphicon-user"></span><%= current_user.name %></p></button>
+                <button class="dropbtn"><p style="color:white ; padding-top:15px "><span class=" glyphicon glyphicon-user"></span><%= current_user.nickname %></p></button>
                 <div class="dropdown-content">
                   <a href="#">My projects</a>
                   <%= link_to "Sign out", signout_path, id: "sign_out" %>
