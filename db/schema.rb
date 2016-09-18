@@ -83,3 +83,4 @@ ActiveRecord::Schema.define(version: 20160917215652) do
   add_foreign_key "session_memberships", "users"
   add_foreign_key "stories", "estimation_sessions"
 end
+

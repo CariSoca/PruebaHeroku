@@ -16,6 +16,7 @@ var app = angular.module("mainScreenModule", []);
 				$scope.deleteStory = function () {
 					$scope.stories.splice($scope.toDeleteStory,1);
 					$scope.toDeleteStory = null;
+
 				};
 
         $http.get("home.json").then(function(response) {      			  
