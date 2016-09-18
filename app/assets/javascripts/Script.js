@@ -13,12 +13,11 @@ var app = angular.module("mainScreenModule", []);
 					$scope.newStory = null;
 				};
 
-				$scope.deleteStory = function () {
-					$scope.stories.splice($scope.toDeleteStory,1);
-					$scope.toDeleteStory = null;
+				$scope.deleteStory = function (story) {
+					$scope.stories.splice($scope.stories.indexOf(story),1);
 				};
 
-        $http.get("home.json").then(function(response) {      			  
+        		$http.get("home.json").then(function(response) {      			  
       			    $scope.projectName = "New Project";  				  
   				  	$scope.defaultSerie = response.data.default.serie;  				  
   				  	$scope.selectedStrategyId = response.data.default.consensus;
