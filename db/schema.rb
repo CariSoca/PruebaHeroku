@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160917215652) do
+ActiveRecord::Schema.define(version: 20160918201343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,12 +67,24 @@ ActiveRecord::Schema.define(version: 20160917215652) do
     t.index ["estimation_session_id"], name: "index_stories_on_estimation_session_id", using: :btree
   end
 
+  create_table "user_googles", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "nickname"
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "uid"
+    t.string   "provider"
   end
 
   add_foreign_key "estimation_sessions", "projects"
@@ -83,4 +95,3 @@ ActiveRecord::Schema.define(version: 20160917215652) do
   add_foreign_key "session_memberships", "users"
   add_foreign_key "stories", "estimation_sessions"
 end
-
