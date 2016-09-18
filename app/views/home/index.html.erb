@@ -145,8 +145,8 @@
 			<table class= "table table-hover" style="width: 100%; margin-right:auto; margin-left:auto; border-color: #262626; border-style:solid   ">
 			  <tr ng-repeat="story in stories track by $index">
 
-          <td style="pading: 25px" contenteditable="false" name="toDeleteStory" ng-model = "toDeleteStory">{{ story }}</td><td>
-          <span class=" glyphicon glyphicon-remove" ng-click="deleteStory(toDeleteStory)" style="float:right"></span> </td> 
+          <td style="pading: 25px" contenteditable="false">{{ story }}</td><td>
+          <span class=" glyphicon glyphicon-remove" ng-click="deleteStory(story)" style="float:right"></span> </td> 
         </tr>
 			 
 
