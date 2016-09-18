@@ -1,0 +1,2 @@
+class PartialEstimationsController < ApplicationController
+end

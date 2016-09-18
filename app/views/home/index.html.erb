@@ -1,0 +1,156 @@
+  <style>
+  .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+  </style>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="login_modal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="padding:35px 50px;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+          </div>
+          <div class="modal-body" style="padding:40px 50px;">
+            <form role="form">
+              <div class="form-group">
+                <p> Enter your Google acoount below.</p>
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+                <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                <input type="text" class="form-control" id="psw" placeholder="Enter password">
+              </div>
+                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+            </form>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>  
+
+
+
+    <div ng-app ="mainScreenModule">
+    <div ng-controller="mainScreenCtrl">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" style = "background-color: #262626">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to controller: 'home' do %>
+            <p class="navbar-brand" style = "color:white; height:100%">Delfos</p>
+          <% end %>
+
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a  style = "color : white" href="#login_modal" data-toggle="modal">Login</a> </li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<!-- FEATURE SECTION -->
+<div class="container wb" style=" width:100%; margin-top : 70px">
+	<div class="container wb" style=" width:60%;">
+    
+    
+    <!-- section to add stories-->
+    <h1 style = "text-align: left" ><input style = "color:#262626" ng-model="projectName">
+      <div class="dropdown">
+        <span class=" glyphicon glyphicon-cog"></span>
+        <div class="dropdown-content">
+            <div >
+              <span class="serieslabel">Consensus strategy</span>
+            </div>
+            <div style="display:block;" class= "config_elements">
+              <select style="width: 100%" ng-model="selectedStrategyId" ng-options="consensus for consensus in consensusList">
+                </select>
+            </div>
+            <div >
+              <span class="firstLabel">Series</span>
+              <span class="secondLabel"> Number of values</span>
+            </div>
+            <div style="display:block;" class= "config_elements">
+              <select style="width: 40%" ng-model="defaultSerie" ng-options="serie for serie in seriesList ">
+                </select>
+              <select style="width: 15%" class= "number_of_values" ng-model="selectedQuantityValues" ng-options="value for value in values ">
+                </select>
+            </div>
+            <form action="" class= "config_elements">
+              <input type="checkbox" name="sync_check_box" id="sync_check_box" value="sync" checked="true" disabled="true" >Sync<br>
+            </form>
+            <span class="timeboxLabel">Timebox</span>
+            <div style="display:block;" class= "config_elements">
+              
+              <input style="width: 17%" type="number" ng-model="hour" placeholder="hh" min="0" max="10">
+
+              <input style="width: 17%" type="number" ng-model="min" placeholder="mm" min="0" max="59">
+              <t style= "color:#808080">Hour/Min</t>
+            </div>
+
+        </div>
+      </div>
+
+    </h1>
+
+		<div class="form">
+
+				<input class="w3-input w3-border w3-round" type="text"  placeholder="Write your story here..." name ="newStory" ng-model ="newStory">
+				<input type = "button" value ="Add" class="button add-button" style=" font-weight: bold;text-align:right;padding: 12px 15px; background-color: grey"
+        ng-click="addStory(newStory)">
+        
+				<button class="button" style=" text-align:right;padding: 12px 30px;font-weight: bold; background-color: #80ff80">
+          Import Story
+        </button>
+		</div>
+		
+
+
+
+    <!--SHOW STORIES SECTION-->
+    <h1 style = "text-align: left">Stories</h1>
+    <div class= "table-responsive" style = "text-align: center ;padding-bottom:30px;">
+      
+
+
+			<table class= "table table-hover" style="width: 100%; margin-right:auto; margin-left:auto; border-color: #262626; border-style:solid   ">
+			  <tr ng-repeat="story in stories track by $index">
+
+          <td style="pading: 25px" contenteditable="false" name="toDeleteStory" ng-model = "toDeleteStory">{{ story }}</td><td>
+          <span class=" glyphicon glyphicon-remove" ng-click="deleteStory(toDeleteStory)" style="float:right"></span> </td> 
+        </tr>
+			 
+
+			</table>
+		</div>
+    
+    <!-- start botton-->
+    <div class="container" style="text-align:center; width:100% ;padding-bottom:30px">
+        <%= link_to controller: 'share' do %>
+        <button type="button" class="btn btn-success btn-lg" ng-click="sendData()">NEXT</button>
+        <% end %>
+		</div>
+	</div>
+</div><!-- container -->
+
+
