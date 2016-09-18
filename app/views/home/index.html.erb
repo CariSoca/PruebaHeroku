@@ -128,7 +128,7 @@
 		<div class="form">
 
 				<input class="w3-input w3-border w3-round" type="text"  placeholder="Write your story here..." name ="nuevaHistoria" ng-model ="nuevaHistoria">
-				<input type = "button" value ="Add" class="button add-button" style=" font-weight: bold;text-align:right;padding: 12px 15px; background-color: grey"
+				<input type = "button" value ="Add" class="button add-button" style=" font-weight: bold;text-align:right;padding: 12px 15px; background-color: grey" ng-disabled = "nuevaHistoria == null"
         ng-click="agregarHistoria(nuevaHistoria)">
         
 				<button class="button" style=" text-align:right;padding: 12px 30px;font-weight: bold; background-color: #80ff80">
@@ -148,8 +148,8 @@
 			<table class= "table table-hover" style="width: 100%; margin-right:auto; margin-left:auto; border-color: #262626; border-style:solid   ">
 			  <tr ng-repeat="historia in historias track by $index">
 
-          <td style="pading: 25px" contenteditable="false" name="HistoriaBorrar" ng-model = "HistoriaBorrar">{{ historia }}</td><td>
-          <span class=" glyphicon glyphicon-remove" ng-click="eliminarHistoria(HistoriaBorrar)" style="float:right"></span> </td> 
+          <td style="pading: 25px" contenteditable="false" >{{ historia }}</td><td>
+          <span class=" glyphicon glyphicon-remove" ng-click="eliminarHistoria(historia)" style="float:right; cursor:pointer;"></span> </td> 
         </tr>
 			 
 
