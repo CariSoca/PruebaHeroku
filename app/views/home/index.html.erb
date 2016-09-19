@@ -1,79 +1,6 @@
-  <style>
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
-      color:white !important;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-footer {
-      background-color: #f9f9f9;
-  }
-  </style>
-
-    <!-- Modal -->
-    <div class="modal fade" id="login_modal" role="dialog">
-      <div class="modal-dialog">
-      
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header" style="padding:35px 50px;">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
-          </div>
-          <div class="modal-body" style="padding:40px 50px;">
-            <form role="form">
-              <div class="form-group">
-                <p> Enter your Google acoount below.</p>
-                <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
-                <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                <input type="text" class="form-control" id="psw" placeholder="Enter password">
-              </div>
-                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-            </form>
-          </div>
-
-        </div>
-        
-      </div>
-    </div>  
-
-
-
     <div ng-app ="mainScreenModule">
     <div ng-controller="mainScreenCtrl">
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" style = "background-color: #262626">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-           <%= link_to controller: 'home' do %>
-            <p class="navbar-brand" style = "color:white; height:100%">Delfos</p>
-          <% end %>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <% if current_user %>
-              <div class="dropdown" style="float:right;">
-                <button class="dropbtn"><p style="color:white ; padding-top:15px "><span class=" glyphicon glyphicon-user"></span><%= current_user.nickname %></p></button>
-                <div class="dropdown-content">
-                  <a href="#">My projects</a>
-                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
-                </div>
-              </div>
-            <% else %>
-                <li style="color:white ; padding-top:5px" ><%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %></li>
-            <% end %>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+
     
    
 	<!-- FEATURE SECTION -->
@@ -124,12 +51,11 @@
 
 		<div class="form">
 
-				<input class="w3-input w3-border w3-round" type="text"  placeholder="Write your story here..." name ="newStory" ng-model ="newStory">
-				<input type = "button" value ="Add" class="button add-button" style=" font-weight: bold;text-align:right;padding: 12px 15px; background-color: grey"
+        <input class="w3-input w3-border w3-round" type="text"  placeholder="Write your story here..." name ="newStory" ng-model ="newStory">
+        <input type = "button" value ="Add" class="button add-button" style=" font-weight: bold;text-align:right;padding: 12px 15px; background-color: grey" ng-disabled = "newStory == null"
         ng-click="addStory(newStory)">
-        
-				<button class="button" style=" text-align:right;padding: 12px 30px;font-weight: bold; background-color: #80ff80">
-          Import Story
+				<button class="btn btn-warning btn-lg" >
+          Import Stories
         </button>
 		</div>
 		
@@ -142,16 +68,16 @@
       
 
 
-			<table class= "table table-hover" style="width: 100%; margin-right:auto; margin-left:auto; border-color: #262626; border-style:solid   ">
-			  <tr ng-repeat="story in stories track by $index">
+      <table class= "table table-hover" style="width: 100%; margin-right:auto; margin-left:auto; border-color: #262626; border-style:solid   ">
+        <tr ng-repeat="story in stories track by $index">
 
-          <td style="pading: 25px" contenteditable="false" name="toDeleteStory" ng-model = "toDeleteStory">{{ story }}</td><td>
-          <span class=" glyphicon glyphicon-remove" ng-click="deleteStory(toDeleteStory)" style="float:right"></span> </td> 
+          <td style="pading: 25px" contenteditable="false" >{{ story }}</td><td>
+          <span class=" glyphicon glyphicon-remove" ng-click="deleteStory(story)" style="float:right; cursor:pointer;"></span> </td> 
         </tr>
-			 
+       
 
-			</table>
-		</div>
+      </table>
+    </div>
     
     <!-- start botton-->
     <div class="container" style="text-align:center; width:100% ;padding-bottom:30px">
