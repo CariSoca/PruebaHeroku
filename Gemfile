@@ -32,7 +32,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-script-source','= 1.8.0'
 
-gem "omniauth-google-oauth2", "~> 0.2.1"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

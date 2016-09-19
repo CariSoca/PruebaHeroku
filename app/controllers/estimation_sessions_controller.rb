@@ -15,14 +15,4 @@ class EstimationSessionsController < ApplicationController
 		render ''
 		end	
 	end	
-
-	def index
-       render 'home/estimationPage'
-    end
-    def sidebar
-       render 'home/sidebar'
-    end
-    def sidebarRight
-       render 'home/sidebarRight'
-    end
 end
