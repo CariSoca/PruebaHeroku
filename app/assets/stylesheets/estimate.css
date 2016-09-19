@@ -1,0 +1,323 @@
+#lightbulb {
+    font-size: 100px;
+    display: block;
+    text-align: center;
+}
+
+h1 {
+    padding: 0;
+    margin: 10px 0;
+}
+
+.chat-user-avatar {
+    font-size: 40px;
+    background: #ccc;
+    padding: 5px 10px;
+}
+
+.feature-icon {
+    font-size: 44px;
+    padding: 0;
+    line-height: 68px;
+    width: 72px;
+    text-align: center;
+    opacity: .8;
+    border: 3px solid;
+    border-radius: 200px;
+    height: 72px;
+    margin-bottom: 20px;
+}
+
+.feature-icon.fa-gamepad {
+    line-height: 60px;
+}
+
+.feature-icon.fa-tachometer {
+    line-height: 60px;
+}
+
+.app-content-loading {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+
+.loading-spinner {
+    position: absolute;
+    font-size: 50px;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+.carousel-example-content {
+    position: absolute;
+    font-size: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -50px;
+}
+
+
+.carousel-item {
+    display: block;
+    color: #444;
+    background: #f4f4f4;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.carousel {
+    padding: 20px;
+    overflow: visible;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: visible;
+}
+
+.carousel>.item, .carousel-item {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.carousel-item {
+    -webkit-transition: -webkit-transform 500ms;
+    -moz-transition: -moz-transform 500ms;
+    transition: transform 500ms;
+}
+
+[drag-to-dismiss]{
+    transform: translate(0,0); /* NOTE: this is required to prevent mobile webkit issues */ 
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+    -moz-transition: opacity 300ms, -moz-transform 300ms;
+    transition: opacity 300ms, transform 300ms;
+    opacity: 1;
+}
+
+.notices-container {
+    overflow-x: hidden;
+}
+
+.dismiss {
+    -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+    -moz-transition: opacity 300ms, -moz-transform 300ms;
+    transition: opacity 300ms, transform 300ms;
+    opacity: 0.5;
+}
+
+.dismitted {
+    -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+    -moz-transition: opacity 300ms, -moz-transform 300ms;
+    transition: opacity 300ms, transform 300ms;
+    opacity: 0;
+}
+
+.list-group-item-home {
+    padding: 20px; 
+    height: 100px;
+}
+
+pre {
+    text-align: left !important;
+}
+
+input.scrollable-header {
+    border-bottom: 3px solid #ccc;
+}
+
+.toucharea {width: 100%; height: 100%;}
+
+
+.DbotonRojo {
+    -moz-box-shadow: 0px 10px 0px 0px #b53535;
+    -webkit-box-shadow: 0px 10px 0px 0px #b53535;
+    box-shadow: 0px 10px 0px 0px #b53535;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #eb3838), color-stop(1, #ff4d4d));
+    background:-moz-linear-gradient(top, #eb3838 5%, #ff4d4d 100%);
+    background:-webkit-linear-gradient(top, #eb3838 5%, #ff4d4d 100%);
+    background:-o-linear-gradient(top, #eb3838 5%, #ff4d4d 100%);
+    background:-ms-linear-gradient(top, #eb3838 5%, #ff4d4d 100%);
+    background:linear-gradient(to bottom, #eb3838 5%, #ff4d4d 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb3838', endColorstr='#ff4d4d',GradientType=0);
+    background-color:#eb3838;
+    -moz-border-radius:31px;
+    -webkit-border-radius:31px;
+    border-radius:31px;
+    display:inline-block;
+    cursor:pointer;
+    color:#faf0f0;
+    font-family:Arial;
+    font-size:28px;
+    font-weight:bold;
+    padding:17px 30px;
+    text-decoration:none;
+    text-shadow:0px 0px 0px #ff4d4d;
+    margin:7px;
+
+}
+.DbotonRojo:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff4d4d), color-stop(1, #eb3838));
+    background:-moz-linear-gradient(top, #ff4d4d 5%, #eb3838 100%);
+    background:-webkit-linear-gradient(top, #ff4d4d 5%, #eb3838 100%);
+    background:-o-linear-gradient(top, #ff4d4d 5%, #eb3838 100%);
+    background:-ms-linear-gradient(top, #ff4d4d 5%, #eb3838 100%);
+    background:linear-gradient(to bottom, #ff4d4d 5%, #eb3838 100%);
+    //	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4d4d', endColorstr='#eb3838',GradientType=0);
+    //background-color:#ff4d4d;
+    background-color:#de0909;
+    color:#faf0f0;
+
+
+}
+.DbotonRojo:active {
+    position:relative;
+    bottom:10px;
+    background-color:blue;
+
+}
+
+
+
+
+
+
+
+.DyourVote{
+    background-color:  #ff4d4d;
+    color: #f2f2f2;
+    /*background-color:   #378de5;*/
+}
+
+.DhistoriaPrincipal{
+    font-size: x-large; 
+    padding-top: 10%;
+    padding-bottom: 0%;
+}
+
+.DhistoriaPrincipalFondo{
+    height: 100%;
+
+}
+
+.DfondoNegro{
+    background-color: #262626;   
+    color:white;
+    height: 12%;
+}
+.Dcabezal{
+    text-transform: none;
+}
+
+.DcabezalSlideRight{
+    background-color: red
+}
+
+.DbotonPuntaje{
+    width:100px;
+    height: 60px;
+    font-size: x-large;
+    background-color:  #ff4d4d;
+}
+.DbotonDerecha{
+    height: 15%;
+    border-bottom: 3px solid #ccc;
+    font-size: large;
+    background-color: black;   
+    color:white;
+}
+.DbotonCabezal{
+    padding-top: 15%;
+    color:white; 
+}
+
+.scrollable{
+    background: #f2f2f2;
+}
+
+.DtipoLetra{
+    font-family:Impact;
+    font-weight: 300;
+    color: #333;
+}
+
+.DaddStory{
+
+}
+
+.DletraGrande{
+
+}
+
+
+.DaddStory{ 
+    height: 11%;
+    vertical-align:  middle;
+    width: 100%;
+}
+
+
+.myButtonLogOut {
+    -moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+    -webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+    box-shadow:inset 0px 1px 3px 0px #91b8b3;
+    background-color:#262626;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: Arial;
+    font-size:17px;
+    padding:16px 23px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #2b665e;
+    height: 67px;
+    width:100%;
+}
+.myButtonLogOut:hover {
+    background-color:#060f0f;
+     color: white;
+      text-decoration: none;
+}
+.myButtonLogOut:active {
+    position:relative;
+    top:5px;
+}
+
+.myButtonCenter{
+
+    position: relative;
+    top: 50%;
+    transform:  translateY(-50%);
+    -ms-transform:  translateY(-50%);
+    -webkit-transform:  translateY(-50%);
+
+
+}

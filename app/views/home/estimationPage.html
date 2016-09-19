@@ -1,0 +1,113 @@
+<!-- <!DOCTYPE html>
+<html>
+ <head>
+       <meta charset="utf-8" />
+       <title>Delfos</title>
+       
+   </head>
+
+   <body -->
+    <div  style="height:100%" ng-app="estimateApp" 
+       ng-controller="MainController"
+       ui-prevent-touchmove-defaults    >
+
+       <!-- Sidebars -->
+       <div ui-track-as-search-param='true'
+            class="sidebar sidebar-left">
+             <div class="scrollable">
+                <h1 class="DletraGrande Dcabezal DfondoNegro scrollable-header app-name"> <small> Project_name</small></h1>  
+                <div class="scrollable-content"  >   <input id="IDStory" class="DaddStory"  placeholder="+ Add story"   ng-model="addStoryLabel" ng-keypress="$event.keyCode == 13? addStory():null"  />
+                                    
+
+
+                    <div class="list-group" >    
+
+
+                        <a class="list-group-item media" ui-turn-off='uiSidebarLeft'  ng-repeat="story in stories" ng-click="cambiarHistoria(story.id)">            
+
+                            <div class="media-body"   >
+                                <h5 class="media-heading"  >{{story.name}}</h5>
+                                <small ng-switch >
+                                    <span >
+                                        <span class="DyourVote label">Your vote: {{story.puntaje}}</span>
+                                    </span>                      
+                                </small>
+                                <small ng-switch >
+                                    <span >
+                                        <span class="DbotonPuntaje label">Total: {{story.total}}</span>
+                                    </span>                      
+                                </small>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+       <div class="sidebar sidebar-right">
+            <div  class="scrollable">
+                <div class="scrollable-content">
+                    <div  class="list-group" ui-turn-off='uiSidebarLeft'>
+                        <a  class="myButtonLogOut " >
+                            <div  class="myButtonCenter" >
+                                Log out <i class="fa fa-chevron-right pull-right"></i>
+                            </div>
+                            
+                        </a>
+                        <a class="myButtonLogOut " >
+                            <div  class="myButtonCenter" >
+                                My projects<i class="fa fa-chevron-right pull-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="app" 
+            ui-swipe-right='Ui.turnOn("uiSidebarLeft")'
+            ui-swipe-left='Ui.turnOff("uiSidebarLeft")'>
+
+           <!-- Navbars -->
+
+           <div class="Dcabezal DfondoNegro navbar navbar-app navbar-absolute-top">     
+               <div class="btn-group pull-left">
+                   <div ui-toggle="uiSidebarLeft" style="text-transform: none;color:white;  padding-left: 30%; padding-top: 10%;" class="navbar-brand btn sidebar-toggle">
+                       <i  stclass= "fa fa-bars"></i> Stories
+                   </div>
+               </div>
+               <div class="DfondoNegro btn-group pull-right" ui-yield-to="navbarAction" >                    
+                   <div ui-toggle="uiSidebarRight" class="Dbtn" style="text-transform: none;padding-top: 5%;color:white;">
+                       {{usuario}}                         
+                   </div>                   
+               </div>
+           </div>
+           <!-- App Body -->
+           <div class="app-body">
+            <div class="app-content">
+                    <div class="scrollable" >
+                        <div class="scrollable-content">
+                            <div  style=" height:  100%" class="container wb container-fluid section section-break" id="estimateExample">
+
+                                <h5 style=" "  class=" DhistoriaPrincipal media-heading">{{nombreHistSel}}</h5>
+                                <div ng-switch="puntajeHistSel" style=" width: 100%;  padding-bottom: 5%;" >
+                                    <span ng-switch-default style="top:0px" class="DyourVote label">Your vote: {{puntajeHistSel}}</span>
+                                    <span ng-switch-when="0" ></span>
+                                </div>  
+
+                                <div  class="btn-group"  ng-repeat="idx in seriePuntuacion" ng-click="siguienteHistoria(idx, historiaSeleccionada)" >
+                                    <a class="DbotonRojo Dbtn "  ui-exclusion-group='myButtons'>{{idx}}</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+             </div>
+           </div>
+       </div>
+    </div>    
+<!--   </body>
+ </html> -->
