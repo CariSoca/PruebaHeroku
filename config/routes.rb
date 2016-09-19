@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
   resources :estimation_sessions, :partial_estimations, :projects,
-  					:stories, :users, :home
+  					:stories, :users, :home, :share
 
 	post '/EstimationSessions/:id', to: 'estimation_sessions#single_person_estimation'
 
@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
+  #resource :home, only: [:show]
 
 end

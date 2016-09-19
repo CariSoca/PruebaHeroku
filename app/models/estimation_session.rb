@@ -1,9 +1,11 @@
+require 'securerandom'
 require 'yaml'
 
 class EstimationSession < ApplicationRecord
   belongs_to :project, :dependent => :destroy
   has_many :stories
   has_many :users, through: :session_memberships
+  before_create :generate_link 
 
   attr_accessor :consensus_strategy 
 
@@ -30,4 +32,10 @@ class EstimationSession < ApplicationRecord
   		@consensus_strategy = Object::const_get(strategies_ids[ self[:strategyId] ]).new
   	end	
   	
+    def generate_link
+      self.sharedLink = loop do
+        random_token = SecureRandom.hex(32)
+          break random_token unless EstimationSession.exists?(sharedLink: random_token)
+      end
+    end
 end

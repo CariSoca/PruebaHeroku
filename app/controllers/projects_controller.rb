@@ -1,8 +1,7 @@
 class ProjectsController < ApplicationController
-
 	
 	def create
-          userParams = {'email' => params[:email], 'nickname' => params[:nickname]}		
+    userParams = {'email' => params[:email], 'nickname' => params[:nickname]}		
 	  user = User.new(userParams)
 	  user.save()
 
@@ -13,27 +12,24 @@ class ProjectsController < ApplicationController
 	  project.save()	 
 
 	  
-	  estimation_session = project.estimation_sessions.create(id: 3, title: params[:name],synchronous: true, 					beginningTime: Time.now)
- 
+	  estimation_session = project.estimation_sessions.create(title: params[:name],synchronous: true,beginningTime: Time.now)
 	  #user.estimation_sessions << estimation_session
 	  session_membership = SessionMembership.new()
-          session_membership.user = user
+    session_membership.user = user
 	  session_membership.estimation_session = estimation_session
-          session_membership.save()	  
-
+    session_membership.save()	  
+    session[:link] = estimation_session.sharedLink
 	  params[:stories].each do |story|
 	 
-	   estimation_session.stories.create(name: story)
+	    estimation_session.stories.create(name: story)
 	  end
-	end	  
+	end
 
-    def share
-      respond_to do |format|
-      format.html { render 'home/share'}
-      format.json { render json: {link: "https://toggl.com/app/timer",
-      							  contributors: ["Daniel Porzio", "Invitado", "Invitado", "Nicolás Urruty"]
-								 }
-				  }
-      end
-    end 
+	def share
+		respond_to do |format|
+      format.html {render 'home/share'}
+      format.json { render json: {link: session[:link],
+      	                          contributors: []} }
+    end
+	end	  
 end
